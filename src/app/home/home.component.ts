@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   // get data without filter
-  getDataWithoutFilter(value, type) {
+  getDataWithoutFilter(value: any, type: any) {
     let data = {
       limit:100
     }
@@ -46,21 +46,20 @@ export class HomeComponent implements OnInit {
     } else if( type ==='successful_launch' && this.launchYear['year']) {
       this.launchSuccess['value'] = value;
       data['launch_year'] = this.launchYear['year'];
-      data['launch_success'] = this.launchSuccess['value'];
+      data['launch_success'] = Boolean(this.launchSuccess['value']);
     } else if (type === 'successful_landing' && this.launchSuccess['value'] && this.launchYear['year']) {
       this.landingSuccess['value'] = value;
       data['launch_year'] = this.launchYear['year'];
-      data['launch_success'] = this.launchSuccess['value'];
-      data['land_success'] = this.landingSuccess['value'];
+      data['launch_success'] = Boolean(this.launchSuccess['value']);
+      data['land_success'] = Boolean(this.landingSuccess['value']);
     } else if(type === 'successful_launch') {
       this.launchSuccess['value'] = value;
-      data['launch_success'] = this.launchSuccess['value']
+      data['launch_success'] = Boolean(this.launchSuccess['value']);
     } else if(type === 'successful_landing') {
       this.landingSuccess['value'] = value;
-      data['land_success'] = this.landingSuccess['value'];
+      data['land_success'] = Boolean(this.landingSuccess['value']);
     }
       this.spaceXService.getLaunchSuccessData(data).subscribe((res: any)=>{
-        console.log('resp..', res)
         if(res && res.length > 0) {
         this.filteredData = res;
         }

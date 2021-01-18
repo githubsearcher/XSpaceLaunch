@@ -10,13 +10,13 @@
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
           <button type="button" class="btn btn-light btn-lg">Successful Launch</button><br>
-          <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="true" (click)="getDataWithoutFilter(true, 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === true)}">True</button>
-          <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="false" (click)="getDataWithoutFilter(false, 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === false)}">False</button>
+          <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="true" (click)="getDataWithoutFilter('true', 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === 'true')}">True</button>
+          <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="false" (click)="getDataWithoutFilter('false', 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === 'false')}">False</button>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
           <button type="button" class="btn btn-light btn-lg">Successful Landing</button><br>
-          <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="true" (click)="getDataWithoutFilter(true, 'successful_landing')" [ngClass]="{'green' : (landingSuccess['value'] === true)}">True</button>
-          <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="false" (click)="getDataWithoutFilter(false, 'successful_landing')"[ngClass]="{'green' : (landingSuccess['value'] === false)}">False</button>
+          <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="true" (click)="getDataWithoutFilter('true', 'successful_landing')" [ngClass]="{'green' : (landingSuccess['value'] === 'true')}">True</button>
+          <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="false" (click)="getDataWithoutFilter('false', 'successful_landing')"[ngClass]="{'green' : (landingSuccess['value'] === 'false')}">False</button>
         </div>
     </div>
     <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
