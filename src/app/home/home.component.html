@@ -1,34 +1,53 @@
-<div class="container-fluid grower-move-container card-view">
+<div class="container-fluid">
+  <div class="row wd-100">
     <h3>Space X Launch Programs</h3>
+  </div>
+  <div class="row wd-100">
+<div class="col-12 col-md-2">
+  <div>
     <h6>Filters</h6>
-   <div class="conatiner">
-        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
-          <button type="button" class="btn btn-light btn-lg">Launch Year</button>
-          <div class="container" *ngFor="let item of years">
-            <button type="button" class="btn btn-light" [(ngModel)]="launchYear['year']" ngDefaultControl [value]="item" (click)="getDataWithoutFilter(item, 'year')"  [ngClass]="{'green' : (launchYear['year'] === item)}">{{item}}</button>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
-          <button type="button" class="btn btn-light btn-lg">Successful Launch</button><br>
-          <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="true" (click)="getDataWithoutFilter('true', 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === 'true')}">True</button>
-          <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="false" (click)="getDataWithoutFilter('false', 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === 'false')}">False</button>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
-          <button type="button" class="btn btn-light btn-lg">Successful Landing</button><br>
-          <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="true" (click)="getDataWithoutFilter('true', 'successful_landing')" [ngClass]="{'green' : (landingSuccess['value'] === 'true')}">True</button>
-          <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="false" (click)="getDataWithoutFilter('false', 'successful_landing')"[ngClass]="{'green' : (landingSuccess['value'] === 'false')}">False</button>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-2">
-      <ng-container *ngFor="let item of filteredData; let i = index">
-        <img src={{item.links.mission_patch_small}} />
-        <p>{{item.mission_name}} #{{i+1}}</p>
-        <p>Mission Ids: {{item.mission_id}}</p>
-        <p>Launch Year {{item.launch_year}}</p>
-        <p>Successful Launch {{item.launch_success}}</p>
-        <p>Successful Landing {{item.land_success}}</p>
-      </ng-container>
+    <h6 class="text-center text-underline">Launch Year</h6>
+    <hr>
+    <div class="row">
+      <div class="col-6 text-center" *ngFor="let item of years">
+        <button type="button" class="btn btn-light mb-3" [(ngModel)]="launchYear['year']" ngDefaultControl [value]="item" (click)="getDataWithoutFilter(item, 'year')"  [ngClass]="{'green' : (launchYear['year'] === item)}">{{item}}</button>
       </div>
+    </div>
+    <h6 class="text-center text-underline">Successful Launch</h6>
+    <hr>
+    <div class="row">
+      <div class="col-6 text-center">
+        <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="true" (click)="getDataWithoutFilter('true', 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === 'true')}">True</button>
+      </div>
+      <div class="col-6 text-center">
+      <button type="button" class="btn btn-light" [(ngModel)]="launchSuccess['value']" ngDefaultControl  [value]="false" (click)="getDataWithoutFilter('false', 'successful_launch')" [ngClass]="{'green' : (launchSuccess['value'] === 'false')}">False</button>
+      </div>
+    </div>
+    <h6 class="text-center text-underline">Successful Landing</h6>
+    <hr>
+    <div class="row">
+      <div class="col-6 text-center">
+        <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="true" (click)="getDataWithoutFilter('true', 'successful_landing')" [ngClass]="{'green' : (landingSuccess['value'] === 'true')}">True</button>
+      </div>
+      <div class="col-6 text-center">
+        <button type="button" class="btn btn-light" [(ngModel)]="landingSuccess['value']" ngDefaultControl [value]="false" (click)="getDataWithoutFilter('false', 'successful_landing')"[ngClass]="{'green' : (landingSuccess['value'] === 'false')}">False</button>
+      </div>
+    </div>
 </div>
-
-
+</div>
+<div class="col-10">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-3 text-center" *ngFor="let item of filteredData; let i = index">
+      <div>
+        <img width="150px"  height="150px" src={{item.links.mission_patch_small}}>
+        <span class="d-block font-weight-bold">{{item.mission_name}} #{{i+1}} </span>
+        <span class="d-block font-weight-bold">Mission Ids:<span class="font-weight-light">{{item.mission_id}}</span></span>
+        <span class="d-block font-weight-bold">Launch Year:<span class="font-weight-light">{{item.launch_year}}</span></span>
+      <span class="d-block font-weight-bold">Successful Launch:<span class="font-weight-light">{{item.launch_success}}</span></span>
+      <span class="d-block font-weight-bold">Successful Landing:<span class="font-weight-light">{{item.land_success}}</span></span>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
