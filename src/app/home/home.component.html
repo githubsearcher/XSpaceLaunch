@@ -40,11 +40,11 @@
     <div class="col-12 col-sm-12 col-md-3 text-center" *ngFor="let item of filteredData; let i = index">
       <div>
         <img width="150px"  height="150px" src={{item.links.mission_patch_small}}>
-        <span class="d-block font-weight-bold">{{item.mission_name}} #{{i+1}} </span>
-        <span class="d-block font-weight-bold">Mission Ids:<span class="font-weight-light">{{item.mission_id}}</span></span>
-        <span class="d-block font-weight-bold">Launch Year:<span class="font-weight-light">{{item.launch_year}}</span></span>
-      <span class="d-block font-weight-bold">Successful Launch:<span class="font-weight-light">{{item.launch_success}}</span></span>
-      <span class="d-block font-weight-bold">Successful Landing:<span class="font-weight-light">{{item.land_success}}</span></span>
+        <span class="d-block font-weight-bold blue">{{item.mission_name}} #{{i+1}} </span>
+        <span class="d-block font-weight-bold">Mission Ids: <span class="font-weight-light">{{item.mission_id}}</span></span>
+        <span class="d-block font-weight-bold">Launch Year: <span class="font-weight-light">{{item.launch_year}}</span></span>
+      <span class="d-block font-weight-bold">Successful Launch: <span class="font-weight-light">{{item.launch_success}}</span></span>
+      <span class="d-block font-weight-bold">Successful Landing: <span class="font-weight-light">{{item.land_success}}</span></span>
       </div>
     </div>
 </div>
